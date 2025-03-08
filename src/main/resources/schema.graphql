@@ -19,9 +19,17 @@ enum TypeL{
 }
 type Querries {
     allRendezVous:[RendezVous]
-    
+    allLogement:[Logement]
+    getLogement(id: Int): Logement
 }
 
+
+
+type Mutations {
+    addLogement(reference: Int, adresse: String, delegation: String, gouvernorat: String, typeL: TypeL, description: String, prix: Float): Logement
+}
 schema {
     query: Querries
+    mutation: Mutations
+
 }
